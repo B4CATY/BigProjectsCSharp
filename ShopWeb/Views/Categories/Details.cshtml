@@ -1,0 +1,51 @@
+﻿@model List<ShopWeb.Models.Product>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> @ViewData["Category"]</h1>
+<div class="w-20 btn-group" role="group">
+    <a asp-action="Index" class ="btn btn-primary mx-2">
+        Back
+    </a>
+    <a asp-action="IndexOrdered" asp-route-id="@Model[0].Categoryid" class ="btn btn-primary mx-2">
+        Sort by price
+    </a>
+    </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              Product Name
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Category Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

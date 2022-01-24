@@ -1,0 +1,29 @@
+﻿@model ShopWeb.ViewModels.RegisterModel
+ 
+<h2>Registration</h2>
+
+<a asp-action="Login" asp-controller="Account" type="button" class="btn btn-primary mx-2">Log in</a>
+
+<form asp-action="Register" asp-controller="Account" asp-anti-forgery="true"><br />
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div>
+            <label asp-for="Login">Type Login</label><br />
+            <input type="text" asp-for="Login"class="form-control" />
+            <span asp-validation-for="Login" class="text-danger" ></span>
+        </div>
+        <div>
+            <label asp-for="Password">Type Password</label><br />
+            <input asp-for="Password" class="form-control"/>
+            <span asp-validation-for="Password" class="text-danger" ></span>
+        </div>
+        <div>
+            <label asp-for="ConfirmPassword">Repeat password</label><br />
+            <input asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger" ></span>
+        </div>
+        <div>
+            <input type="submit" value="Registration" class ="btn btn-primary mx-2" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ShopWeb.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<h2>Select the graphics cards you want to order, you can only order 1 unit at a time</h2>
+<br />
+@using(Html.BeginForm( "CreateNewOrder","Home",FormMethod.Post))
+{
+    <div class="nl">
+        <table class="table table-striped table-bordered ">
+            <tbody class="table-responsive ">
+                <tr><th></th><th>Name</th></tr>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="responsables"
+                                   value="@product.Id"
+                                   class="styled">
+                        </td>
+                        <td>@product.NameProduct</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit" />
+<br /><br />
+}
+<a asp-action="Index"class="btn btn-primary">Back to profile</a>

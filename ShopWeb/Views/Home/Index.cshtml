@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["UserName"]</h1>
+    <div class="w-100 btn-group" role="group">
+        <a asp-action="EditName" class ="btn btn-primary mx-2">
+        Edit Name
+    </a>
+   
+        <a asp-action="EditPassword" class ="btn btn-primary mx-2">
+        Edit Password
+    </a>
+     <a asp-action="CreateNewOrder" class ="btn btn-primary mx-2">
+        Create new order
+    </a>
+     <a asp-action="ShowOrders" class ="btn btn-primary mx-2">
+        Show my list of orders
+    </a>
+    </div>
+</div>
+ <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+<div id="delegar">
+    
+       
+        <a asp-action="Logout" asp-controller="Account"  class ="btn btn-primary mx-2">
+        Log Out
+    </a>
+</div>
+       

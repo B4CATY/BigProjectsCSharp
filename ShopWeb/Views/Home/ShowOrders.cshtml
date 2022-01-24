@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ShopWeb.ViewModels.OrderView>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My list of orders</h1>
+<table class="table">
+    <thead>
+        <tr >
+            <th class="col-6">
+                @Html.DisplayNameFor(model => model.CartId)
+            </th>
+            <th class="col-6">
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+       
+@foreach (var item in Model) {
+        <tr>
+            <td class="col-6">
+                @Html.DisplayFor(modelItem => item.CartId)
+            </td>
+            <td class="col-6">
+                @Html.DisplayFor(modelItem => item.Product)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-action="Index"class="btn btn-primary">Back to profile</a>
