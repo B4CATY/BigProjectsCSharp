@@ -62,7 +62,7 @@ namespace ShopWeb.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                    ModelState.AddModelError("", "This login already exists");
             }
             return View(model);
         }
